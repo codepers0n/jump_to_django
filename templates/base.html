@@ -4,19 +4,23 @@
 <head>
     <!--required meta tags-->
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1,
-           shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--bootstrap css-->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <!--pybocss-->
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>Hello, pybo!</title>
 </head>
+{% include "navbar.html" %}
+
 <body>
 <!-- 기본 템플릿 안에 삽입 될 내용 start-->
 {% block content %}
 {% endblock %}
 <!-- 기본 템플릿 안에 삽입 될 내용 end-->
+<!--jQuery JS-->
+<script src="{% static 'jquery-3.6.0.min.js' %}"></script>
+<!--bootstrap JS-->
+<script src="{% static 'bootstrap.min.js' %}"></script>
 </body>
 </html>
