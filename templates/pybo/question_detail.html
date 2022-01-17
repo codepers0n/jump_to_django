@@ -18,19 +18,14 @@
     <h2 class="border-bottom py-2">{{ question.subject }}</h2>
 
     <div class="row my-3">
-        <div class="col-1"><!--추천 영역-->
-            <div class="bg-light text-center p-3 border font-weight-bolder mb-1">
-                {{ question.voter.count }}
-            </div>
-            <a href="#" data-uri="{%  url 'pybo:vote_question' question.id %}"
+        <div class="col-1"> <!-- 추천영역 -->
+            <div class="bg-light text-center p-3 border font-weight-bolder mb-1">{{question.voter.count}}</div>
+            <a href="#" data-uri="{% url 'pybo:vote_question' question.id  %}"
                class="recommend btn btn-sm btn-secondary btn-block my-1">추천</a>
         </div>
-    <div class="col-11">
-
-
-<!--질문 영역-->
-    <div class="card">
-        <div class="card-body">
+        <div class="col-11"><!--질문 영역-->
+            <div class="card">
+            <div class="card-body">
             <div class="card-text" style="white-space: pre-line;">{{ question.content|mark }}</div>
             <div class="d-flex justify-content-end">
 
@@ -40,12 +35,13 @@
                     <div>{{ question.modify_date }}</div>
                 </div>
                 {% endif %}
-
+            </div>
+            </div>
                 <div class="badge badge-light p-2 text-left mx-3" style="color: #1a1e21;">
                     <div class="mb-2">{{ question.author.username }}</div>
                     <div>{{ question.create_date }}</div>
                 </div>
-            </div>
+
 
             {% if request.user == question.author %}
             <div class="my-3">
@@ -89,7 +85,7 @@
             <!--질문댓글 끝-->
         </div>
     </div>
-
+  </div>
         <h5 class="border-bottom my-3 py-2">
             {{ question.answer_set.count }}개의 답변이 있습니다.
         </h5>
@@ -189,7 +185,7 @@
                            class="form-control" rows="10"></textarea>
              </div>
              <input type="submit" value="답변 등록" class="btn-primary">
-        </form>
+         </form>
     </div>
 </div>
 {% endblock %}
