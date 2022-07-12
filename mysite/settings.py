@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'soojin.pythonanywhere.com',
+    '43.200.136.144',
 ]
 
 
